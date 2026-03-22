@@ -1,0 +1,53 @@
+import pygame
+import sys
+
+pygame.init()
+
+clock = pygame.time.Clock()
+
+caption = pygame.display.set_caption('Caption Example')
+
+l = 1000
+h = 500
+
+my_font = pygame.font.SysFont('monospaced', 30)
+
+screen = pygame.display.set_mode((l,h))
+
+red = (255,0 ,0)
+black = (0, 0, 0)
+blue = (0, 0, 255)
+
+x = 500
+y = 200
+
+length = 50
+height = 50
+
+close_window = False
+while not close_window:
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			sys.exit()
+	keypress = pygame.key.get_pressed()
+	
+	screen.fill(black)
+
+	if pygame.key.get_pressed()[pygame.K_UP]:
+		y -=3
+	if pygame.key.get_pressed()[pygame.K_DOWN]:
+		y +=3
+	if pygame.key.get_pressed()[pygame.K_LEFT]:
+		x -=3
+	if pygame.key.get_pressed()[pygame.K_RIGHT]:
+		x +=3
+
+	text1 = my_font.render('Red Cube', 1, blue, black)
+
+	screen.blit(text1, (450, 10))
+
+	pygame.draw.rect(screen, color, pygame.Rect(x, y, length, height))
+
+	pygame.display.update()
+
+	clock.tick(70)
