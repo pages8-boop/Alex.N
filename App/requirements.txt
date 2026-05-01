@@ -1,0 +1,7 @@
+# Invento has no third-party Python dependencies.
+# Tkinter ships with the standard CPython installer on Windows and macOS.
+# Python >= 3.10 is recommended (uses PEP 604 union type hints).
+#
+# Optional dev tools:
+#   pytest      # run tests/  (the included tests also work with stdlib)
+#   pyinstaller # build a single-file Windows .exe (see README.md)
